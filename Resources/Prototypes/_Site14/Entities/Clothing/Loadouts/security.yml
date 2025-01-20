@@ -1,0 +1,140 @@
+﻿# Uniform
+- type: entity
+  parent: [RMCUniformSuitCoordsBase, ClothingUniformJumpsuitColorWhite]
+  id: SCPJumpsuitSecurity
+  name: security uniform
+  description: Standard issue security department uniform. Now in white!
+  components:
+  - type: CMArmor
+    armor: 5
+
+- type: entity
+  parent: [RMCUniformSuitCoordsBase, ClothingUniformJumpsuitColorWhite]
+  id: SCPJumpsuitSecurityChief
+  name: chief security uniform
+  description: A uniform for the chief of security, in monotone grey. Has some extra armor plating.
+  components:
+  - type: Sprite
+    sprite: _Site14/Clothing/Uniforms/chief.rsi
+  - type: CMArmor
+    armor: 15
+
+# Helmets
+- type: entity
+  parent: CMArmorHelmetM11
+  id: SCPArmorHelmetX20Recruit
+  name: X20 security helmet
+  description: An experimental security helmet with a yellow visor, painted in security recruit colors.
+  components:
+  - type: Sprite
+    sprite: _Site14/Clothing/Head/Security/recruit.rsi
+  - type: Clothing
+    sprite: _Site14/Clothing/Head/Security/recruit.rsi
+  - type: ItemCamouflage
+    camouflageVariations: { }
+
+- type: entity
+  parent: SCPArmorHelmetX20Recruit
+  id: SCPArmorHelmetX20Chief
+  name: X20 chief security helmet
+  description: An experimental security helmet with a yellow visor. This one is made specifically for the chief of security.
+  components:
+  - type: Sprite
+    sprite: _Site14/Clothing/Head/Security/chief.rsi
+  - type: Clothing
+    sprite: _Site14/Clothing/Head/Security/chief.rsi
+  - type: CMArmor
+    armor: 25
+    explosionArmor: 15
+
+# Outerclothing
+- type: entity
+  parent: RMCArmorVest
+  id: SCPArmorVest
+  name: security armored vest
+  components:
+  - type: Sprite
+    sprite: _Site14/Clothing/OuterClothing/SecurityArmor/Standard/recruit.rsi
+  - type: CMArmor
+    armor: 20
+    bio: 5
+    explosionArmor: 5
+
+- type: entity
+  parent: SCPArmorVest
+  id: SCPArmorVestChief
+  name: chief of security armored vest
+  description: An improved security vest which has extra protection against all kinds of damage.
+  components:
+  - type: Sprite
+    sprite: _Site14/Clothing/OuterClothing/SecurityArmor/Standard/chief.rsi
+  - type: CMArmor
+    armor: 30
+    bio: 15
+    explosionArmor: 10
+
+# Gloves
+- type: entity
+  parent: CMHandsBlackMarine
+  id: SCPHandsSecurity # TODO armor
+  name: combat gloves
+  description: Standard issue security tactical gloves.
+
+- type: entity
+  parent: CMHandsInsulated
+  id: SCPHandsInsulated
+  name: insulated gloves
+
+# Shoes
+- type: entity
+  parent: CMBootsBlack
+  id: SCPBootsCombat
+  name: combat boots
+
+# Armbands
+- type: entity
+  parent: RMCNurseArmband
+  id: SCPRecruitArmband
+  name: security recruit armband
+  description: An armband, worn by the recruits of the security department.
+  components:
+  - type: Sprite
+    sprite: _Site14/Clothing/Accessory/recruit_armband.rsi
+
+- type: entity
+  parent: RMCNurseArmband
+  id: SCPChiefArmband
+  name: security chief armband
+  description: An armband, worn by the chief of the security department.
+  components:
+  - type: Sprite
+    sprite: _Site14/Clothing/Accessory/chief_armband.rsi
+
+# Starting gear
+- type: startingGear
+  id: SCPGearSecurityRecruit
+  equipment:
+    jumpsuit: SCPJumpsuitSecurity
+    neck: SCPRecruitArmband
+    shoes: SCPBootsCombat
+    head: SCPArmorHelmetX20Recruit
+    eyes: CMGlassesSecurity
+    gloves: SCPHandsSecurity
+    id: CMIDCardMilitaryPolice
+    outerClothing: SCPArmorVest
+    ears: CMHeadsetMPO
+    belt: CMBeltSecurityMPFilled
+
+- type: startingGear
+  id: SCPGearSecurityChief
+  equipment:
+    jumpsuit: SCPJumpsuitSecurity
+    neck: SCPChiefArmband
+    shoes: SCPBootsCombat
+    head: SCPArmorHelmetX20Chief
+    eyes: CMGlassesSecurity
+    gloves: SCPHandsSecurity
+    id: CMIDCardMilitaryPolice
+    outerClothing: SCPArmorVestChief
+    ears: CMHeadsetMPO
+    belt: CMBeltSecurityMPFilled
