@@ -1,10 +1,8 @@
 ﻿- type: department
   parent: CMDepartmentBase
-  id: CMMilitaryPolice
-  name: department-CMMilitaryPolice
-  description: cm-department-MilitaryPolice-description
+  id: SCPSecurityDepartment
+  name: scp-department-Security
+  description: scp-department-Security-description
   color: "#DE3A3A"
   roles:
-  - CMChiefMP
-  - CMMilitaryWarden
-  - CMMilitaryPolice
+  - SCPSecurityRecruit

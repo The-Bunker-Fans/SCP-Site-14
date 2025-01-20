@@ -1,15 +1,11 @@
 - type: job
   parent: CMJobBase
-  id: CMMilitaryPolice
-  name: cm-job-name-militarypolice
-  description: cm-job-description-militarypolice
-  playTimeTracker: CMJobMilitaryPolice
-  requirements:
-  - !type:DepartmentTimeRequirement
-    department: CMSquad
-    time: 36000 # 10 hours
+  id: SCPSecurityRecruit
+  name: scp-job-name-security-recruit
+  description: scp-job-description-security-recruit
+  playTimeTracker: SCPSecurityRecruit
   weight: 5
-  startingGear: CMGearMilitaryPolice
+  startingGear: SCPGearSecurityRecruit
   icon: "CMJobIconMilitaryPolice"
   joinNotifyCrew: false
   supervisors: cm-job-supervisors-cmp
@@ -33,27 +29,12 @@
         RMCSkillFireman: 2
         RMCSkillPolice: 2
     - type: JobPrefix
-      prefix: "MP"
-
-- type: startingGear
-  id: CMGearMilitaryPolice
-  equipment:
-    jumpsuit: CMJumpsuitMP
-    shoes: CMBootsBlackFilled
-    head: CMHeadBeretRed
-    eyes: CMGlassesSecurity
-    gloves: CMHandsBlackMarine
-    id: CMIDCardMilitaryPolice
-    outerClothing: CMArmorM2MP
-    ears: CMHeadsetMPO
-    belt: CMBeltSecurityMPFilled
-    #    pocket1: TODO RMC14 tape recorder
-    pocket2: RMCPouchGeneralLarge
+      prefix: "SR"
 
 - type: entity
   parent: CMSpawnPointJobBase
-  id: CMSpawnPointMilitaryPolice
-  name: military police spawn point
+  id: SCPSpawnPointSecurityRecruit
+  name: security recruit spawn point
   components:
   - type: SpawnPoint
     job_id: CMMilitaryPolice
@@ -64,5 +45,5 @@
     - state: military_police
 
 - type: playTimeTracker
-  id: CMJobMilitaryPolice
+  id: SCPSecurityRecruit
   isHumanoid: true
